@@ -1,5 +1,6 @@
 package net.bananap0wer.bananaadventuretime;
 
+import net.bananap0wer.bananaadventuretime.block.ModBlocks;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,5 +14,6 @@ public class BananaAdventureTime implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
