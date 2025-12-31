@@ -17,11 +17,17 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block RUBY_BLOCK = registerBlock("ruby_block", 
-        new Block( 
+    public static final Block RUBY_BLOCK = registerBlock("ruby_block", new Block( 
             AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).instrument(NoteBlockInstrument.BIT).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)
-        )
-    );
+    ));
+
+    public static final Block RUBY_ORE = registerBlock("ruby_ore", new Block( 
+            AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)
+    ));
+    public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore", new Block( 
+            AbstractBlock.Settings.copy(RUBY_ORE).mapColor(MapColor.DEEPSLATE_GRAY).strength(4.5F, 3.0F).sounds(BlockSoundGroup.DEEPSLATE)
+    ));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -38,6 +44,13 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.addAfter(Blocks.EMERALD_BLOCK, RUBY_BLOCK);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+            entries.addAfter(Blocks.DEEPSLATE_EMERALD_ORE, RUBY_ORE);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+            entries.addAfter(ModBlocks.RUBY_ORE, DEEPSLATE_RUBY_ORE);
         });
     }
 }

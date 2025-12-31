@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "bananaadventuretime:block/deepslate_ruby_ore"
+  }
+}
