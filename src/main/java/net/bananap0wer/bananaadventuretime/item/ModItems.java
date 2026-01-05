@@ -11,6 +11,10 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
+
+    public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
+
+
     private static Item refisterItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(BananaAdventureTime.MOD_ID, name), item);
     }
@@ -20,7 +24,10 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.EMERALD, RUBY);
-            
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+            entries.addAfter(Items.HONEY_BOTTLE, SWEET_BERRIES_JUICE);
         });
     }
 }

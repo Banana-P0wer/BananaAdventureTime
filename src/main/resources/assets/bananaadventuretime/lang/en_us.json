@@ -2,5 +2,7 @@
   "item.bananaadventuretime.ruby": "Ruby",
   "block.bananaadventuretime.ruby_block": "Block of Ruby",
   "block.bananaadventuretime.ruby_ore": "Ruby Ore",
-  "block.bananaadventuretime.deepslate_ruby_ore": "Deepslate Ruby Ore"
+  "block.bananaadventuretime.deepslate_ruby_ore": "Deepslate Ruby Ore",
+
+  "item.bananaadventuretime.sweet_berries_juice": "Sweet Berries Juice"
 }
