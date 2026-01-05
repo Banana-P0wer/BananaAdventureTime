@@ -17,6 +17,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
+    //Add blocks here 1/2
     public static final Block RUBY_BLOCK = registerBlock("ruby_block", new Block( 
             AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).instrument(NoteBlockInstrument.BIT).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)
     ));
@@ -42,6 +43,7 @@ public class ModBlocks {
     public static void registerModBlocks() {
         BananaAdventureTime.LOGGER.info("Registering Mod Blocks for " + BananaAdventureTime.MOD_ID);
 
+        //Add blocks here 2/2
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.addAfter(Blocks.EMERALD_BLOCK, RUBY_BLOCK);
         });

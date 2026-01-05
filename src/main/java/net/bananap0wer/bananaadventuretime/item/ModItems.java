@@ -10,6 +10,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+   
+    //Add items here 1/2
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
 
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
@@ -21,7 +23,8 @@ public class ModItems {
 
     public static void registerModItems() {
         BananaAdventureTime.LOGGER.info("Registering Mod Items for " + BananaAdventureTime.MOD_ID);
-
+        
+        //Add items here 2/2
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.EMERALD, RUBY);
         });
