@@ -13,7 +13,13 @@ public class ModItems {
    
     //Add items here 1/2
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
-
+    
+    public static final Item MARCELINE_AXE = refisterItem("marceline_axe", new Item(new Item.Settings()));
+    public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar", new Item(new Item.Settings()));
+    
+    public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings()));
+    public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings()));
+    
     public static final Item SCARLET = refisterItem("scarlet", new Item(new Item.Settings()));
     public static final Item FOURTH_DIMENSION_SWORD = refisterItem("fourth_dimension_sword", new Item(new Item.Settings()));
     public static final Item DEATH_SWORD = refisterItem("death_sword", new Item(new Item.Settings()));
@@ -28,8 +34,10 @@ public class ModItems {
 
     public static final Item EMPTY_DEMON_BLOOD_SWORD = refisterItem("empty_demon_blood_sword", new Item(new Item.Settings()));
     public static final Item REFUGE_OF_THE_SOUL = refisterItem("refuge_of_the_soul", new Item(new Item.Settings()));
+
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
 
+    public static final Item COME_ALONG_WITH_ME = refisterItem("come_along_with_me", new Item(new Item.Settings()));
 
     private static Item refisterItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(BananaAdventureTime.MOD_ID, name), item);
@@ -41,7 +49,7 @@ public class ModItems {
         //Add items here 2/2
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.EMERALD, RUBY);
-entries.addAfter(Items.NETHERITE_INGOT, SCARLET_HANDLE);
+            entries.addAfter(Items.NETHERITE_INGOT, SCARLET_HANDLE);
             entries.addAfter(SCARLET_HANDLE, SCARLET_BLADE);
             entries.addAfter(SCARLET_BLADE, EMPTY_DEMON_BLOOD_SWORD);
             entries.addAfter(Items.HEART_OF_THE_SEA, REFUGE_OF_THE_SOUL);
@@ -60,6 +68,17 @@ entries.addAfter(Items.NETHERITE_INGOT, SCARLET_HANDLE);
             entries.addAfter(DEMON_BLOOD_SWORD, GRAPE_SWORD);
             entries.addAfter(GRAPE_SWORD, GRASS_SWORD);
             entries.addAfter(GRASS_SWORD, FINN_SWORD);
+            
+
+            entries.addAfter(Items.NETHERITE_AXE, MARCELINE_AXE);
+            entries.addAfter(MARCELINE_AXE, MARCELINE_AXE_GUITAR);
+            entries.addAfter(Items.TURTLE_HELMET, EMPTY_ICE_KING_CROWN);
+            entries.addAfter(EMPTY_ICE_KING_CROWN, ICE_KING_CROWN);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+            
+            entries.addAfter(Items.MUSIC_DISC_PIGSTEP, COME_ALONG_WITH_ME);
         });
     }
 }

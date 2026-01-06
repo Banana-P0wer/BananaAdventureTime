@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bananaadventuretime:item/come_along_with_me"
+  }
+}
