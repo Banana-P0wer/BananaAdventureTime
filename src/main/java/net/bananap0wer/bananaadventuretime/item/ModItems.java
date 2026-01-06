@@ -14,6 +14,20 @@ public class ModItems {
     //Add items here 1/2
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
 
+    public static final Item SCARLET = refisterItem("scarlet", new Item(new Item.Settings()));
+    public static final Item FOURTH_DIMENSION_SWORD = refisterItem("fourth_dimension_sword", new Item(new Item.Settings()));
+    public static final Item DEATH_SWORD = refisterItem("death_sword", new Item(new Item.Settings()));
+    public static final Item ROOT_SWORD = refisterItem("root_sword", new Item(new Item.Settings()));
+    public static final Item DEMON_BLOOD_SWORD = refisterItem("demon_blood_sword", new Item(new Item.Settings()));
+    public static final Item GRAPE_SWORD = refisterItem("grape_sword", new Item(new Item.Settings()));
+    public static final Item GRASS_SWORD = refisterItem("grass_sword", new Item(new Item.Settings()));
+    public static final Item FINN_SWORD = refisterItem("finn_sword", new Item(new Item.Settings()));
+
+    public static final Item SCARLET_BLADE = refisterItem("scarlet_blade", new Item(new Item.Settings()));
+    public static final Item SCARLET_HANDLE = refisterItem("scarlet_handle", new Item(new Item.Settings()));
+
+    public static final Item EMPTY_DEMON_BLOOD_SWORD = refisterItem("empty_demon_blood_sword", new Item(new Item.Settings()));
+    public static final Item REFUGE_OF_THE_SOUL = refisterItem("refuge_of_the_soul", new Item(new Item.Settings()));
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
 
 
@@ -27,10 +41,25 @@ public class ModItems {
         //Add items here 2/2
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.EMERALD, RUBY);
+entries.addAfter(Items.NETHERITE_INGOT, SCARLET_HANDLE);
+            entries.addAfter(SCARLET_HANDLE, SCARLET_BLADE);
+            entries.addAfter(SCARLET_BLADE, EMPTY_DEMON_BLOOD_SWORD);
+            entries.addAfter(Items.HEART_OF_THE_SEA, REFUGE_OF_THE_SOUL);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.addAfter(Items.HONEY_BOTTLE, SWEET_BERRIES_JUICE);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {          
+            entries.addAfter(Items.NETHERITE_SWORD, SCARLET);
+            entries.addAfter(SCARLET, FOURTH_DIMENSION_SWORD);
+            entries.addAfter(FOURTH_DIMENSION_SWORD, DEATH_SWORD);
+            entries.addAfter(DEATH_SWORD, ROOT_SWORD);
+            entries.addAfter(ROOT_SWORD, DEMON_BLOOD_SWORD);
+            entries.addAfter(DEMON_BLOOD_SWORD, GRAPE_SWORD);
+            entries.addAfter(GRAPE_SWORD, GRASS_SWORD);
+            entries.addAfter(GRASS_SWORD, FINN_SWORD);
         });
     }
 }
