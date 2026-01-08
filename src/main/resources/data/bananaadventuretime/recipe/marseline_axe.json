@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_axe"
+    },
+    "X": {
+      "item": "bananaadventuretime:ruby"
+    }
+  },
+  "pattern": [
+    "#X#"
+  ],
+  "result": {
+    "id": "bananaadventuretime:marceline_axe"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "X": {
+      "item": "bananaadventuretime:marceline_axe"
+    }
+  },
+  "pattern": [
+    "###",
+    " X "
+  ],
+  "result": {
+    "id": "bananaadventuretime:marceline_axe_guitar"
+  },
+  "show_notification": true
+}

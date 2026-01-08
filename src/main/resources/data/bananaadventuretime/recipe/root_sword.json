@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:quartz"
+    },
+    "X": {
+      "item": "minecraft:oak_sapling"
+    }
+  },
+  "pattern": [
+    "#",
+    "#",
+    "X"
+  ],
+  "result": {
+    "id": "bananaadventuretime:root_sword"
+  },
+  "show_notification": true
+}

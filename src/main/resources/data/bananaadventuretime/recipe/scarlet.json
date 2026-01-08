@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "bananaadventuretime:scarlet_blade"
+    },
+    "X": {
+      "item": "bananaadventuretime:scarlet_handle"
+    }
+  },
+  "pattern": [
+    "#",
+    "X"
+  ],
+  "result": {
+    "id": "bananaadventuretime:scarlet"
+  },
+  "show_notification": true
+}
