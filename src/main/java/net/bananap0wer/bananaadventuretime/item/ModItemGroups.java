@@ -1,6 +1,7 @@
 package net.bananap0wer.bananaadventuretime.item;
 
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
+import net.bananap0wer.bananaadventuretime.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,10 @@ public class ModItemGroups {
             .displayName(Text.translatable("itemgroup.bananaadventuretime.tub"))
             .entries((displayContext, entries) -> {
                 entries.add(ModItems.RUBY);
+                entries.add(ModBlocks.RUBY_BLOCK);
+                entries.add(ModBlocks.RUBY_ORE);
+                entries.add(ModBlocks.DEEPSLATE_RUBY_ORE);
+
                 entries.add(ModItems.SCARLET_HANDLE);
                 entries.add(ModItems.SCARLET_BLADE);
                 entries.add(ModItems.EMPTY_DEMON_BLOOD_SWORD);
