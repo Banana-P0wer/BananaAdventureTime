@@ -33,7 +33,7 @@ public class ModItems {
     public static final Item SCARLET_HANDLE = refisterItem("scarlet_handle", new Item(new Item.Settings()));
 
     public static final Item EMPTY_DEMON_BLOOD_SWORD = refisterItem("empty_demon_blood_sword", new Item(new Item.Settings()));
-    public static final Item REFUGE_OF_THE_SOUL = refisterItem("refuge_of_the_soul", new Item(new Item.Settings()));
+    public static final Item ECHO_OF_FINN = refisterItem("echo_of_finn", new Item(new Item.Settings()));
 
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
 
@@ -52,7 +52,7 @@ public class ModItems {
             entries.addAfter(Items.NETHERITE_INGOT, SCARLET_HANDLE);
             entries.addAfter(SCARLET_HANDLE, SCARLET_BLADE);
             entries.addAfter(SCARLET_BLADE, EMPTY_DEMON_BLOOD_SWORD);
-            entries.addAfter(Items.HEART_OF_THE_SEA, REFUGE_OF_THE_SOUL);
+            entries.addAfter(Items.HEART_OF_THE_SEA, ECHO_OF_FINN);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {

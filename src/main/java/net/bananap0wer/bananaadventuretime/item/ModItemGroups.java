@@ -24,7 +24,7 @@ public class ModItemGroups {
                 entries.add(ModItems.SCARLET_HANDLE);
                 entries.add(ModItems.SCARLET_BLADE);
                 entries.add(ModItems.EMPTY_DEMON_BLOOD_SWORD);
-                entries.add(ModItems.REFUGE_OF_THE_SOUL);
+                entries.add(ModItems.ECHO_OF_FINN);
 
                 entries.add(ModItems.SWEET_BERRIES_JUICE);
 
