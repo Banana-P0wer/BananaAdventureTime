@@ -17,22 +17,22 @@ public class ModItems {
     public static final Item MARCELINE_AXE = refisterItem("marceline_axe", new Item(new Item.Settings()));
     public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar", new Item(new Item.Settings()));
     
-    public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings()));
-    public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings()));
+    public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings().fireproof()));
+    public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings().fireproof()));
     
-    public static final Item SCARLET = refisterItem("scarlet", new Item(new Item.Settings()));
-    public static final Item FOURTH_DIMENSION_SWORD = refisterItem("fourth_dimension_sword", new Item(new Item.Settings()));
-    public static final Item DEATH_SWORD = refisterItem("death_sword", new Item(new Item.Settings()));
+    public static final Item SCARLET = refisterItem("scarlet", new Item(new Item.Settings().fireproof()));
+    public static final Item FOURTH_DIMENSION_SWORD = refisterItem("fourth_dimension_sword", new Item(new Item.Settings().fireproof()));
+    public static final Item DEATH_SWORD = refisterItem("death_sword", new Item(new Item.Settings().fireproof()));
     public static final Item ROOT_SWORD = refisterItem("root_sword", new Item(new Item.Settings()));
-    public static final Item DEMON_BLOOD_SWORD = refisterItem("demon_blood_sword", new Item(new Item.Settings()));
-    public static final Item GRAPE_SWORD = refisterItem("grape_sword", new Item(new Item.Settings()));
+    public static final Item DEMON_BLOOD_SWORD = refisterItem("demon_blood_sword", new Item(new Item.Settings().fireproof()));
+    public static final Item GRAPE_SWORD = refisterItem("grape_sword", new Item(new Item.Settings().fireproof()));
     public static final Item GRASS_SWORD = refisterItem("grass_sword", new Item(new Item.Settings()));
     public static final Item FINN_SWORD = refisterItem("finn_sword", new Item(new Item.Settings()));
 
-    public static final Item SCARLET_BLADE = refisterItem("scarlet_blade", new Item(new Item.Settings()));
-    public static final Item SCARLET_HANDLE = refisterItem("scarlet_handle", new Item(new Item.Settings()));
+    public static final Item SCARLET_BLADE = refisterItem("scarlet_blade", new Item(new Item.Settings().fireproof()));
+    public static final Item SCARLET_HANDLE = refisterItem("scarlet_handle", new Item(new Item.Settings().fireproof()));
 
-    public static final Item EMPTY_DEMON_BLOOD_SWORD = refisterItem("empty_demon_blood_sword", new Item(new Item.Settings()));
+    public static final Item EMPTY_DEMON_BLOOD_SWORD = refisterItem("empty_demon_blood_sword", new Item(new Item.Settings().fireproof()));
     public static final Item ECHO_OF_FINN = refisterItem("echo_of_finn", new Item(new Item.Settings()));
 
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
