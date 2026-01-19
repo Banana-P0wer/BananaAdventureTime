@@ -1,0 +1,24 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "supplementaries"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "combat",
+  "ingredients": [
+    {
+      "item": "supplementaries:bubble_blower"
+    },
+    {
+      "item": "minecraft:lodestone"
+    }
+  ],
+  "result": {
+    "id": "bananaadventuretime:fourth_dimension_sword",
+    "count": 1
+  }
+}
