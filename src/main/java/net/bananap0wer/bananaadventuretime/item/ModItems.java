@@ -77,7 +77,6 @@ public class ModItems {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
-            
             entries.addAfter(Items.MUSIC_DISC_PIGSTEP, COME_ALONG_WITH_ME);
         });
     }
