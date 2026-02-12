@@ -22,7 +22,6 @@ public class ModItems {
     
     public static final Item SCARLET = refisterItem("scarlet", new Item(new Item.Settings().fireproof()));
     public static final Item FOURTH_DIMENSION_SWORD = refisterItem("fourth_dimension_sword", new Item(new Item.Settings().fireproof()));
-    public static final Item DEATH_SWORD = refisterItem("death_sword", new Item(new Item.Settings().fireproof()));
     public static final Item ROOT_SWORD = refisterItem("root_sword", new Item(new Item.Settings()));
     public static final Item DEMON_BLOOD_SWORD = refisterItem("demon_blood_sword", new Item(new Item.Settings().fireproof()));
     public static final Item GRAPE_SWORD = refisterItem("grape_sword", new Item(new Item.Settings().fireproof()));
@@ -62,8 +61,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {          
             entries.addAfter(Items.NETHERITE_SWORD, SCARLET);
             entries.addAfter(SCARLET, FOURTH_DIMENSION_SWORD);
-            entries.addAfter(FOURTH_DIMENSION_SWORD, DEATH_SWORD);
-            entries.addAfter(DEATH_SWORD, ROOT_SWORD);
+            entries.addAfter(FOURTH_DIMENSION_SWORD, ROOT_SWORD);
             entries.addAfter(ROOT_SWORD, DEMON_BLOOD_SWORD);
             entries.addAfter(DEMON_BLOOD_SWORD, GRAPE_SWORD);
             entries.addAfter(GRAPE_SWORD, GRASS_SWORD);

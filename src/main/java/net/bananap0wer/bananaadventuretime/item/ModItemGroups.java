@@ -30,7 +30,6 @@ public class ModItemGroups {
 
                 entries.add(ModItems.SCARLET);
                 entries.add(ModItems.FOURTH_DIMENSION_SWORD);
-                entries.add(ModItems.DEATH_SWORD);
                 entries.add(ModItems.ROOT_SWORD);
                 entries.add(ModItems.DEMON_BLOOD_SWORD);
                 entries.add(ModItems.GRAPE_SWORD);
