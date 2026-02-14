@@ -2,6 +2,7 @@ package net.bananap0wer.bananaadventuretime.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroups;
@@ -16,7 +17,7 @@ public class ModItems {
     //Add items here 1/2
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
     
-    public static final Item MARCELINE_AXE = refisterItem("marceline_axe", new Item(new Item.Settings()));
+    public static final Item MARCELINE_AXE = registerNetheriteAxe("marceline_axe", true);
     public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar", new Item(new Item.Settings()));
     
     public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings().fireproof()));
@@ -49,6 +50,17 @@ public class ModItems {
         }
 
         return refisterItem(name, new SwordItem(ToolMaterials.NETHERITE, settings));
+    }
+
+    private static Item registerNetheriteAxe(String name, boolean fireproof) {
+        Item.Settings settings = new Item.Settings()
+            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.NETHERITE, 5, -3.0f));
+
+        if (fireproof) {
+            settings.fireproof();
+        }
+
+        return refisterItem(name, new AxeItem(ToolMaterials.NETHERITE, settings));
     }
 
     private static Item refisterItem(String name, Item item) {
