@@ -3,6 +3,7 @@ package net.bananap0wer.bananaadventuretime;
 import net.bananap0wer.bananaadventuretime.block.ModBlocks;
 import net.bananap0wer.bananaadventuretime.item.ModItemGroups;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
+import net.bananap0wer.bananaadventuretime.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,5 +19,7 @@ public class BananaAdventureTime implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModWorldGeneration.generateModWorldGen();
 	}
 }
