@@ -2,6 +2,7 @@ package net.bananap0wer.bananaadventuretime.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
+import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -37,7 +38,8 @@ public class ModItems {
     public static final Item EMPTY_DEMON_BLOOD_SWORD = refisterItem("empty_demon_blood_sword", new Item(new Item.Settings()));
     public static final Item ECHO_OF_FINN = refisterItem("echo_of_finn", new Item(new Item.Settings()));
 
-    public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
+    public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice",
+        new SweetBerriesJuiceItem(new Item.Settings().food(ModFoodComponents.SWEET_BERRIES_JUICE).maxCount(16)));
 
     public static final Item COME_ALONG_WITH_ME = refisterItem("come_along_with_me", new Item(new Item.Settings()));
 
