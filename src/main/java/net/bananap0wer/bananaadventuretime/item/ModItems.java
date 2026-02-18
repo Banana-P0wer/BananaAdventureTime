@@ -15,23 +15,25 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-   
+    private static final int PLAYER_BASE_ATTACK_DAMAGE = 1;
+    private static final float PLAYER_BASE_ATTACK_SPEED = 4.0f;
+
     //Add items here 1/2
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
     
-    public static final Item MARCELINE_AXE = registerNetheriteAxe("marceline_axe", true);
+    public static final Item MARCELINE_AXE = registerNetheriteAxe("marceline_axe", true, 8, 1.0f, 1);
     public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar", new Item(new Item.Settings()));
     
     public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings()));
     public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings()));
     
-    public static final Item SCARLET = registerNetheriteSword("scarlet", true);
-    public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true);
-    public static final Item ROOT_SWORD = registerNetheriteSword("root_sword", false);
-    public static final Item DEMON_BLOOD_SWORD = registerNetheriteSword("demon_blood_sword", true);
-    public static final Item GRAPE_SWORD = registerGrapeSword("grape_sword");
-    public static final Item GRASS_SWORD = registerNetheriteSword("grass_sword", false);
-    public static final Item FINN_SWORD = registerNetheriteSword("finn_sword", false);
+    public static final Item SCARLET = registerNetheriteSword("scarlet", true, 9, 2.0f, 5);
+    public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true, 20, 0.4f, 10);
+    public static final Item ROOT_SWORD = registerNetheriteSword("root_sword", false, 6, 1.9f, 1);
+    public static final Item DEMON_BLOOD_SWORD = registerNetheriteSword("demon_blood_sword", true, 12, 1.7f, 1);
+    public static final Item GRAPE_SWORD = registerGrapeSword("grape_sword", 8, 1.6f, 1);
+    public static final Item GRASS_SWORD = registerNetheriteSword("grass_sword", false, 3, 5.0f, 1);
+    public static final Item FINN_SWORD = registerNetheriteSword("finn_sword", false, 14, 1.6f, 3);
 
     public static final Item SCARLET_BLADE = refisterItem("scarlet_blade", new Item(new Item.Settings()));
     public static final Item SCARLET_HANDLE = refisterItem("scarlet_handle", new Item(new Item.Settings()));
@@ -44,33 +46,48 @@ public class ModItems {
 
     public static final Item COME_ALONG_WITH_ME = refisterItem("come_along_with_me", new Item(new Item.Settings()));
 
-    private static Item registerNetheriteSword(String name, boolean fireproof) {
-        Item.Settings settings = new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4f));
-
-        if (fireproof) {
-            settings.fireproof();
-        }
-
+    private static Item registerNetheriteSword(String name, boolean fireproof, int attackDamage, float attackSpeed, int durabilityMultiplier) {
+        Item.Settings settings = createNetheriteSwordSettings(fireproof, attackDamage, attackSpeed, durabilityMultiplier);
         return refisterItem(name, new SwordItem(ToolMaterials.NETHERITE, settings));
     }
 
-    private static Item registerGrapeSword(String name) {
-        Item.Settings settings = new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4f));
-
+    private static Item registerGrapeSword(String name, int attackDamage, float attackSpeed, int durabilityMultiplier) {
+        Item.Settings settings = createNetheriteSwordSettings(false, attackDamage, attackSpeed, durabilityMultiplier);
         return refisterItem(name, new GrapeSwordItem(ToolMaterials.NETHERITE, settings));
     }
 
-    private static Item registerNetheriteAxe(String name, boolean fireproof) {
+    private static Item registerNetheriteAxe(String name, boolean fireproof, int attackDamage, float attackSpeed, int durabilityMultiplier) {
         Item.Settings settings = new Item.Settings()
-            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.NETHERITE, 5, -3.0f));
+            .maxDamage(ToolMaterials.NETHERITE.getDurability() * durabilityMultiplier)
+            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.NETHERITE,
+                getNetheriteWeaponAttackDamage(attackDamage), getWeaponAttackSpeed(attackSpeed)));
 
         if (fireproof) {
             settings.fireproof();
         }
 
         return refisterItem(name, new AxeItem(ToolMaterials.NETHERITE, settings));
+    }
+
+    private static Item.Settings createNetheriteSwordSettings(boolean fireproof, int attackDamage, float attackSpeed, int durabilityMultiplier) {
+        Item.Settings settings = new Item.Settings()
+            .maxDamage(ToolMaterials.NETHERITE.getDurability() * durabilityMultiplier)
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE,
+                getNetheriteWeaponAttackDamage(attackDamage), getWeaponAttackSpeed(attackSpeed)));
+
+        if (fireproof) {
+            settings.fireproof();
+        }
+
+        return settings;
+    }
+
+    private static int getNetheriteWeaponAttackDamage(int attackDamage) {
+        return attackDamage - PLAYER_BASE_ATTACK_DAMAGE - (int) ToolMaterials.NETHERITE.getAttackDamage();
+    }
+
+    private static float getWeaponAttackSpeed(float attackSpeed) {
+        return attackSpeed - PLAYER_BASE_ATTACK_SPEED;
     }
 
     private static Item refisterItem(String name, Item item) {
