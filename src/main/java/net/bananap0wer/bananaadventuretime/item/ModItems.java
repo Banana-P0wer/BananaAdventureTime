@@ -2,6 +2,7 @@ package net.bananap0wer.bananaadventuretime.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
+import net.bananap0wer.bananaadventuretime.item.custom.GrapeSwordItem;
 import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
@@ -28,7 +29,7 @@ public class ModItems {
     public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true);
     public static final Item ROOT_SWORD = registerNetheriteSword("root_sword", false);
     public static final Item DEMON_BLOOD_SWORD = registerNetheriteSword("demon_blood_sword", true);
-    public static final Item GRAPE_SWORD = registerNetheriteSword("grape_sword", false);
+    public static final Item GRAPE_SWORD = registerGrapeSword("grape_sword");
     public static final Item GRASS_SWORD = registerNetheriteSword("grass_sword", false);
     public static final Item FINN_SWORD = registerNetheriteSword("finn_sword", false);
 
@@ -52,6 +53,13 @@ public class ModItems {
         }
 
         return refisterItem(name, new SwordItem(ToolMaterials.NETHERITE, settings));
+    }
+
+    private static Item registerGrapeSword(String name) {
+        Item.Settings settings = new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4f));
+
+        return refisterItem(name, new GrapeSwordItem(ToolMaterials.NETHERITE, settings));
     }
 
     private static Item registerNetheriteAxe(String name, boolean fireproof) {
