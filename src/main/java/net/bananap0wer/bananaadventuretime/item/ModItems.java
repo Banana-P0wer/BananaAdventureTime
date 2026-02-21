@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
 import net.bananap0wer.bananaadventuretime.item.custom.GrapeSwordItem;
 import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
+import net.bananap0wer.bananaadventuretime.sound.ModSounds;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -44,7 +45,8 @@ public class ModItems {
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice",
         new SweetBerriesJuiceItem(new Item.Settings().food(ModFoodComponents.SWEET_BERRIES_JUICE).maxCount(16)));
 
-    public static final Item COME_ALONG_WITH_ME = refisterItem("come_along_with_me", new Item(new Item.Settings()));
+    public static final Item COME_ALONG_WITH_ME = refisterItem("come_along_with_me",
+        new Item(new Item.Settings().jukeboxPlayable(ModSounds.COME_ALONG_WITH_ME_KEY).maxCount(1)));
 
     private static Item registerNetheriteSword(String name, boolean fireproof, int attackDamage, float attackSpeed, int durabilityMultiplier) {
         Item.Settings settings = createNetheriteSwordSettings(fireproof, attackDamage, attackSpeed, durabilityMultiplier);
