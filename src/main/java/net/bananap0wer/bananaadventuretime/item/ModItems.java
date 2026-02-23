@@ -2,6 +2,7 @@ package net.bananap0wer.bananaadventuretime.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
+import net.bananap0wer.bananaadventuretime.item.custom.DemonBloodSwordItem;
 import net.bananap0wer.bananaadventuretime.item.custom.GrapeSwordItem;
 import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
 import net.bananap0wer.bananaadventuretime.sound.ModSounds;
@@ -31,7 +32,7 @@ public class ModItems {
     public static final Item SCARLET = registerNetheriteSword("scarlet", true, 9, 2.0f, 5);
     public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true, 20, 0.4f, 10);
     public static final Item ROOT_SWORD = registerNetheriteSword("root_sword", false, 6, 1.9f, 1);
-    public static final Item DEMON_BLOOD_SWORD = registerNetheriteSword("demon_blood_sword", true, 12, 1.7f, 1);
+    public static final Item DEMON_BLOOD_SWORD = registerDemonBloodSword("demon_blood_sword", 12, 1.7f, 1);
     public static final Item GRAPE_SWORD = registerGrapeSword("grape_sword", 8, 1.6f, 1);
     public static final Item GRASS_SWORD = registerNetheriteSword("grass_sword", false, 3, 5.0f, 1);
     public static final Item FINN_SWORD = registerNetheriteSword("finn_sword", false, 14, 1.6f, 3);
@@ -56,6 +57,11 @@ public class ModItems {
     private static Item registerGrapeSword(String name, int attackDamage, float attackSpeed, int durabilityMultiplier) {
         Item.Settings settings = createNetheriteSwordSettings(false, attackDamage, attackSpeed, durabilityMultiplier);
         return refisterItem(name, new GrapeSwordItem(ToolMaterials.NETHERITE, settings));
+    }
+
+    private static Item registerDemonBloodSword(String name, int attackDamage, float attackSpeed, int durabilityMultiplier) {
+        Item.Settings settings = createNetheriteSwordSettings(true, attackDamage, attackSpeed, durabilityMultiplier);
+        return refisterItem(name, new DemonBloodSwordItem(ToolMaterials.NETHERITE, settings));
     }
 
     private static Item registerNetheriteAxe(String name, boolean fireproof, int attackDamage, float attackSpeed, int durabilityMultiplier) {
