@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
 import net.bananap0wer.bananaadventuretime.item.custom.DemonBloodSwordItem;
 import net.bananap0wer.bananaadventuretime.item.custom.GrapeSwordItem;
+import net.bananap0wer.bananaadventuretime.item.custom.MarcelineAxeGuitarItem;
 import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
 import net.bananap0wer.bananaadventuretime.sound.ModSounds;
 import net.minecraft.item.AxeItem;
@@ -24,7 +25,8 @@ public class ModItems {
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
     
     public static final Item MARCELINE_AXE = registerNetheriteAxe("marceline_axe", true, 8, 1.0f, 1);
-    public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar", new Item(new Item.Settings()));
+    public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar",
+        new MarcelineAxeGuitarItem(new Item.Settings()));
     
     public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings()));
     public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings()));
