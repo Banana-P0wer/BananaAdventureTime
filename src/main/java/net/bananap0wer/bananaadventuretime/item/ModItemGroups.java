@@ -27,6 +27,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ECHO_OF_FINN);
 
                 entries.add(ModItems.SWEET_BERRIES_JUICE);
+                entries.add(ModItems.TIME_SANDWICH);
 
                 entries.add(ModItems.SCARLET);
                 entries.add(ModItems.FOURTH_DIMENSION_SWORD);

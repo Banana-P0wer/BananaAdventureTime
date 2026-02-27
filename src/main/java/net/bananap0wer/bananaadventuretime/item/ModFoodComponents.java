@@ -9,4 +9,9 @@ public class ModFoodComponents {
         .saturationModifier(0.2f)
         .usingConvertsTo(Items.GLASS_BOTTLE)
         .build();
+
+    public static final FoodComponent TIME_SANDWICH = new FoodComponent.Builder()
+        .nutrition(16)
+        .saturationModifier(0.6f)
+        .build();
 }
