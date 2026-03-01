@@ -47,6 +47,8 @@ public class ModItems {
 
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice",
         new SweetBerriesJuiceItem(new Item.Settings().food(ModFoodComponents.SWEET_BERRIES_JUICE).maxCount(16)));
+    public static final Item APPLE_PIE = refisterItem("apple_pie",
+        new Item(new Item.Settings().food(ModFoodComponents.APPLE_PIE)));
     public static final Item TIME_SANDWICH = refisterItem("time_sandwich",
         new Item(new Item.Settings().food(ModFoodComponents.TIME_SANDWICH)));
 
@@ -120,7 +122,8 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.addAfter(Items.HONEY_BOTTLE, SWEET_BERRIES_JUICE);
-            entries.addAfter(Items.PUMPKIN_PIE, TIME_SANDWICH);
+            entries.addAfter(Items.PUMPKIN_PIE, APPLE_PIE);
+            entries.addAfter(APPLE_PIE, TIME_SANDWICH);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {          
