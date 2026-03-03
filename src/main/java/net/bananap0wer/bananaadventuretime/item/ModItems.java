@@ -32,7 +32,7 @@ public class ModItems {
     public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings()));
     
     public static final Item SCARLET = registerNetheriteSword("scarlet", true, 9, 2.0f, 5);
-    public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true, 20, 0.4f, 10);
+    public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true, 9, 1.7f, 5);
     public static final Item ROOT_SWORD = registerNetheriteSword("root_sword", false, 6, 1.9f, 1);
     public static final Item DEMON_BLOOD_SWORD = registerDemonBloodSword("demon_blood_sword", 12, 1.7f, 1);
     public static final Item GRAPE_SWORD = registerGrapeSword("grape_sword", 8, 1.6f, 1);
