@@ -1,0 +1,30 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "crafted_scarlet": {
+      "conditions": {
+        "recipe_id": "bananaadventuretime:scarlet"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Old steel, new edge."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:scarlet"
+    },
+    "title": {
+      "text": "Scarlet Reforged"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_scarlet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
