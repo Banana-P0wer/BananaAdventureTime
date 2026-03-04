@@ -1,0 +1,53 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "apple_pie": {
+      "conditions": {
+        "item": {
+          "items": "bananaadventuretime:apple_pie"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sweet_berries_juice": {
+      "conditions": {
+        "item": {
+          "items": "bananaadventuretime:sweet_berries_juice"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "time_sandwich": {
+      "conditions": {
+        "item": {
+          "items": "bananaadventuretime:time_sandwich"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Taste every strange snack this world has to offer."
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:time_sandwich"
+    },
+    "title": {
+      "text": "Snack Time"
+    }
+  },
+  "requirements": [
+    [
+      "sweet_berries_juice",
+      "apple_pie",
+      "time_sandwich"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}
