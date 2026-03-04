@@ -1,0 +1,48 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "played_disc": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:jukebox"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "bananaadventuretime:come_along_with_me"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Play a song for the end of an adventure."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:come_along_with_me"
+    },
+    "title": {
+      "text": "Come Along With Me"
+    }
+  },
+  "requirements": [
+    [
+      "played_disc"
+    ]
+  ],
+  "rewards": {
+    "experience": 25
+  },
+  "sends_telemetry_event": true
+}
