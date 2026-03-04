@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bananaadventuretime:ruby"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "The adventure begins."
+    },
+    "frame": "task",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:ruby"
+    },
+    "title": {
+      "text": "Mathematical!"
+    }
+  },
+  "requirements": [
+    [
+      "ruby"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
