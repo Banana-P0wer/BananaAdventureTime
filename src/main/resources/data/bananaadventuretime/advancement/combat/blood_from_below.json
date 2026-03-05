@@ -1,0 +1,34 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "demon_blood_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bananaadventuretime:demon_blood_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Some blades remember where they came from."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:demon_blood_sword"
+    },
+    "title": {
+      "text": "Blood From Below"
+    }
+  },
+  "requirements": [
+    [
+      "demon_blood_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

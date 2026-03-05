@@ -1,0 +1,34 @@
+{
+  "parent": "bananaadventuretime:combat/blood_from_below",
+  "criteria": {
+    "empty_demon_blood_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bananaadventuretime:empty_demon_blood_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "The power is gone, but the shape remains."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:empty_demon_blood_sword"
+    },
+    "title": {
+      "text": "Empty Vessel"
+    }
+  },
+  "requirements": [
+    [
+      "empty_demon_blood_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

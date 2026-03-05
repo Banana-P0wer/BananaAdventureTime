@@ -1,0 +1,30 @@
+{
+  "parent": "bananaadventuretime:combat/empty_vessel",
+  "criteria": {
+    "crafted_grape_sword": {
+      "conditions": {
+        "recipe_id": "bananaadventuretime:grape_sword"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "A legendary weapon, now mostly juice."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:grape_sword"
+    },
+    "title": {
+      "text": "Berry Bad Idea"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_grape_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

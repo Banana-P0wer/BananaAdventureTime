@@ -1,0 +1,50 @@
+{
+  "parent": "bananaadventuretime:combat/berry_bad_idea",
+  "criteria": {
+    "hit_with_grape_sword": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "bananaadventuretime:grape_sword"
+                }
+              },
+              "type": "minecraft:player"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_player_attack"
+              }
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "It was worth it. Probably."
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:grape_sword"
+    },
+    "title": {
+      "text": "One Good Hit"
+    }
+  },
+  "requirements": [
+    [
+      "hit_with_grape_sword"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}
