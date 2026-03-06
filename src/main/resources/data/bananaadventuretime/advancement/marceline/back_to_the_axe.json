@@ -1,15 +1,8 @@
 {
   "parent": "bananaadventuretime:marceline/vampire_queens_guitar",
   "criteria": {
-    "marceline_axe_returned": {
-      "conditions": {
-        "items": [
-          {
-            "items": "bananaadventuretime:marceline_axe"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "transformed_in_lava": {
+      "trigger": "minecraft:impossible"
     }
   },
   "display": {
@@ -27,7 +20,7 @@
   },
   "requirements": [
     [
-      "marceline_axe_returned"
+      "transformed_in_lava"
     ]
   ],
   "rewards": {

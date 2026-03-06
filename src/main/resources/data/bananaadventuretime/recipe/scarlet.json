@@ -1,17 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "#": {
+  "ingredients": [
+    {
       "item": "bananaadventuretime:scarlet_blade"
     },
-    "X": {
+    {
       "item": "bananaadventuretime:scarlet_handle"
     }
-  },
-  "pattern": [
-    "#",
-    "X"
   ],
   "result": {
     "id": "bananaadventuretime:scarlet"

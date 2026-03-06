@@ -41,8 +41,12 @@
   },
   "requirements": [
     [
-      "sweet_berries_juice",
-      "apple_pie",
+      "sweet_berries_juice"
+    ],
+    [
+      "apple_pie"
+    ],
+    [
       "time_sandwich"
     ]
   ],
