@@ -1,0 +1,30 @@
+{
+  "parent": "bananaadventuretime:marceline/axe_bass",
+  "criteria": {
+    "crafted_marceline_axe_guitar": {
+      "conditions": {
+        "recipe_id": "bananaadventuretime:marseline_axe-guitar"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Some weapons are better with strings."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:marceline_axe_guitar"
+    },
+    "title": {
+      "text": "Vampire Queen's Guitar"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_marceline_axe_guitar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

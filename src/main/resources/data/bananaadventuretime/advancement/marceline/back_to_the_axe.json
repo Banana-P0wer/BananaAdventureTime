@@ -1,0 +1,37 @@
+{
+  "parent": "bananaadventuretime:marceline/vampire_queens_guitar",
+  "criteria": {
+    "marceline_axe_returned": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bananaadventuretime:marceline_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "The music burned away. The axe stayed."
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:marceline_axe"
+    },
+    "title": {
+      "text": "Back to the Axe"
+    }
+  },
+  "requirements": [
+    [
+      "marceline_axe_returned"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

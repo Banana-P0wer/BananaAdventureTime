@@ -1,0 +1,34 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "marceline_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bananaadventuretime:marceline_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Sharp enough for trees. Loud enough for everything else."
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:marceline_axe"
+    },
+    "title": {
+      "text": "Axe Bass"
+    }
+  },
+  "requirements": [
+    [
+      "marceline_axe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
