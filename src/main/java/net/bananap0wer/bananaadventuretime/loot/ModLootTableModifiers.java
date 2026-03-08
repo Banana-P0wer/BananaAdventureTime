@@ -17,6 +17,10 @@ public class ModLootTableModifiers {
             if (LootTables.IGLOO_CHEST_CHEST.equals(key)) {
                 tableBuilder.pool(createEmptyIceKingCrownPool());
             }
+
+            if (LootTables.VILLAGE_SNOWY_HOUSE_CHEST.equals(key)) {
+                tableBuilder.pool(createEmptyIceKingCrownPool());
+            }
         });
     }
 
