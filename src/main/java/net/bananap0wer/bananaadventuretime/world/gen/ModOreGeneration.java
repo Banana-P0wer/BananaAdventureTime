@@ -8,7 +8,10 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModOreGeneration {
     public static void generateOres() {
-        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN),
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.RUBY_ORE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN),
+            GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.RUBY_ORE_MOUNTAIN_PLACED_KEY);
     }
 }
