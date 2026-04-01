@@ -9,6 +9,7 @@ import net.bananap0wer.bananaadventuretime.item.custom.MarcelineAxeGuitarItem;
 import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
 import net.bananap0wer.bananaadventuretime.sound.ModSounds;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroups;
@@ -26,8 +27,7 @@ public class ModItems {
     public static final Item RUBY = refisterItem("ruby", new Item(new Item.Settings()));
     
     public static final Item MARCELINE_AXE = registerNetheriteAxe("marceline_axe", true, 8, 1.0f, 1);
-    public static final Item MARCELINE_AXE_GUITAR = refisterItem("marceline_axe_guitar",
-        new MarcelineAxeGuitarItem(new Item.Settings()));
+    public static final Item MARCELINE_AXE_GUITAR = registerMarcelineAxeGuitar("marceline_axe_guitar");
     
     public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings()));
     public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings()));
@@ -87,6 +87,15 @@ public class ModItems {
         }
 
         return refisterItem(name, new AxeItem(ToolMaterials.NETHERITE, settings));
+    }
+
+    private static Item registerMarcelineAxeGuitar(String name) {
+        Item.Settings settings = new Item.Settings()
+            .maxDamage(ToolMaterials.NETHERITE.getDurability())
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,
+                getNetheriteWeaponAttackDamage(1), getWeaponAttackSpeed(4.0f)));
+
+        return refisterItem(name, new MarcelineAxeGuitarItem(ToolMaterials.NETHERITE, settings));
     }
 
     private static Item.Settings createNetheriteSwordSettings(boolean fireproof, int attackDamage, float attackSpeed, int durabilityMultiplier) {
