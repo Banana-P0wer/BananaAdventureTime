@@ -32,14 +32,23 @@ public class FourthDimensionSwordItem extends SwordItem {
             return TypedActionResult.success(stack, world.isClient());
         }
 
+        if (isTeleportStateBlocked(player)) {
+            return TypedActionResult.fail(stack);
+        }
+
         ServerWorld overworld = player.getServer().getWorld(World.OVERWORLD);
         if (overworld == null) {
             return TypedActionResult.fail(stack);
         }
 
-        TeleportDestination destination = getOverworldSpawn(player, overworld);
-        player.teleport(overworld, destination.pos().x, destination.pos().y, destination.pos().z,
-            destination.yaw(), player.getPitch());
+        Optional<TeleportDestination> destination = getOverworldSpawn(player, overworld);
+        if (destination.isEmpty()) {
+            return TypedActionResult.fail(stack);
+        }
+
+        TeleportDestination teleportDestination = destination.get();
+        player.teleport(overworld, teleportDestination.pos().x, teleportDestination.pos().y, teleportDestination.pos().z,
+            teleportDestination.yaw(), player.getPitch());
         stack.damage(1, player, getEquipmentSlot(hand));
 
         return TypedActionResult.success(stack, false);
@@ -49,7 +58,11 @@ public class FourthDimensionSwordItem extends SwordItem {
         return stack.isDamageable() && stack.getDamage() >= stack.getMaxDamage() - 1;
     }
 
-    private static TeleportDestination getOverworldSpawn(ServerPlayerEntity player, ServerWorld overworld) {
+    private static boolean isTeleportStateBlocked(ServerPlayerEntity player) {
+        return player.hasVehicle() || player.isSleeping() || !player.isAlive() || player.isDead();
+    }
+
+    private static Optional<TeleportDestination> getOverworldSpawn(ServerPlayerEntity player, ServerWorld overworld) {
         BlockPos playerSpawnPos = player.getSpawnPointPosition();
         if (playerSpawnPos != null && World.OVERWORLD.equals(player.getSpawnPointDimension())) {
             Optional<ServerPlayerEntity.RespawnPos> respawnPos = ServerPlayerEntity.findRespawnPosition(overworld,
@@ -57,11 +70,14 @@ public class FourthDimensionSwordItem extends SwordItem {
 
             if (respawnPos.isPresent()) {
                 ServerPlayerEntity.RespawnPos pos = respawnPos.get();
-                return new TeleportDestination(pos.pos(), pos.yaw());
+                return Optional.of(new TeleportDestination(pos.pos(), pos.yaw()));
             }
+
+            return Optional.empty();
         }
 
-        return new TeleportDestination(Vec3d.ofBottomCenter(overworld.getSpawnPos()), overworld.getSpawnAngle());
+        return Optional.of(new TeleportDestination(Vec3d.ofBottomCenter(overworld.getSpawnPos()),
+            overworld.getSpawnAngle()));
     }
 
     private static EquipmentSlot getEquipmentSlot(Hand hand) {
