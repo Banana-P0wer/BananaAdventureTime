@@ -3,7 +3,10 @@
 	"package": "net.bananap0wer.bananaadventuretime.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"AnvilScreenHandlerAccessor",
 		"ExampleMixin",
+		"ForgingScreenHandlerAccessor",
+		"ForgingScreenHandlerMixin",
 		"ItemEntityMixin"
 	],
 	"injectors": {
