@@ -3,6 +3,7 @@ package net.bananap0wer.bananaadventuretime.item.custom;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -15,6 +16,10 @@ public class GrapeSwordItem extends SwordItem {
 
     @Override
     public void postDamageEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (!attacker.getWorld().isClient() && target instanceof WitherEntity) {
+            target.damage(attacker.getDamageSources().genericKill(), Float.MAX_VALUE);
+        }
+
         stack.damage(stack.getMaxDamage(), attacker, EquipmentSlot.MAINHAND);
 
         if (!(attacker instanceof PlayerEntity player && player.isCreative())) {
