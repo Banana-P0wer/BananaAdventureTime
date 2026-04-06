@@ -3,7 +3,9 @@ package net.bananap0wer.bananaadventuretime.item.custom;
 import java.util.Optional;
 
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Dismounting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
@@ -65,19 +67,16 @@ public class FourthDimensionSwordItem extends SwordItem {
     private static Optional<TeleportDestination> getOverworldSpawn(ServerPlayerEntity player, ServerWorld overworld) {
         BlockPos playerSpawnPos = player.getSpawnPointPosition();
         if (playerSpawnPos != null && World.OVERWORLD.equals(player.getSpawnPointDimension())) {
-            Optional<ServerPlayerEntity.RespawnPos> respawnPos = ServerPlayerEntity.findRespawnPosition(overworld,
-                playerSpawnPos, player.getSpawnAngle(), player.isSpawnForced(), true);
-
-            if (respawnPos.isPresent()) {
-                ServerPlayerEntity.RespawnPos pos = respawnPos.get();
-                return Optional.of(new TeleportDestination(pos.pos(), pos.yaw()));
-            }
-
-            return Optional.empty();
+            return getSafeSpawnDestination(overworld, playerSpawnPos, player.getSpawnAngle());
         }
 
-        return Optional.of(new TeleportDestination(Vec3d.ofBottomCenter(overworld.getSpawnPos()),
-            overworld.getSpawnAngle()));
+        return getSafeSpawnDestination(overworld, overworld.getSpawnPos(), overworld.getSpawnAngle());
+    }
+
+    private static Optional<TeleportDestination> getSafeSpawnDestination(ServerWorld overworld, BlockPos spawnPos,
+        float yaw) {
+        Vec3d safePos = Dismounting.findRespawnPos(EntityType.PLAYER, overworld, spawnPos, false);
+        return safePos == null ? Optional.empty() : Optional.of(new TeleportDestination(safePos, yaw));
     }
 
     private static EquipmentSlot getEquipmentSlot(Hand hand) {

@@ -2,8 +2,8 @@ package net.bananap0wer.bananaadventuretime.item.custom;
 
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
+import net.bananap0wer.bananaadventuretime.util.ItemEntityOwnerHelper;
 import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
@@ -69,8 +69,8 @@ public class MarcelineAxeGuitarItem extends HoeItem {
     }
 
     private static void grantBackToTheAxe(ItemEntity entity) {
-        Entity owner = entity.getOwner();
-        if (!(owner instanceof ServerPlayerEntity player)) {
+        ServerPlayerEntity player = ItemEntityOwnerHelper.getServerPlayer(entity);
+        if (player == null) {
             return;
         }
 

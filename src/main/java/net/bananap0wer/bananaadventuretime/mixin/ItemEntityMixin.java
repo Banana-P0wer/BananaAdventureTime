@@ -1,7 +1,7 @@
 package net.bananap0wer.bananaadventuretime.mixin;
 
 import net.bananap0wer.bananaadventuretime.item.ModItems;
-import net.minecraft.entity.Entity;
+import net.bananap0wer.bananaadventuretime.util.ItemEntityOwnerHelper;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -26,8 +26,8 @@ public class ItemEntityMixin {
             return;
         }
 
-        Entity owner = itemEntity.getOwner();
-        if (!(owner instanceof ServerPlayerEntity player)) {
+        ServerPlayerEntity player = ItemEntityOwnerHelper.getServerPlayer(itemEntity);
+        if (player == null) {
             return;
         }
 
