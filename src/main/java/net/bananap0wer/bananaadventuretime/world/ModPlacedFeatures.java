@@ -8,7 +8,6 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ruby_ore_placed");
-    public static final RegistryKey<PlacedFeature> RUBY_ORE_MOUNTAIN_PLACED_KEY = registerKey("ruby_ore_mountain_placed");
 
     private static RegistryKey<PlacedFeature> registerKey(String name) {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(BananaAdventureTime.MOD_ID, name));
