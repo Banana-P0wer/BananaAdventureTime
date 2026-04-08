@@ -18,21 +18,16 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
+    public static final Block RUBY_BLOCK = registerBlock("ruby_block",
+            new Block(AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED)
+                    .instrument(NoteBlockInstrument.BIT).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)));
 
-    //Add blocks here 1/2
-    public static final Block RUBY_BLOCK = registerBlock("ruby_block", 
-        new Block( 
-            AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).instrument(NoteBlockInstrument.BIT).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)
-    ));
-
-    public static final Block RUBY_ORE = registerBlock("ruby_ore", 
-        new ExperienceDroppingBlock(UniformIntProvider.create(3, 7),
-            AbstractBlock.Settings.copy(Blocks.EMERALD_ORE)
-    ));
-    public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore", 
-        new ExperienceDroppingBlock(UniformIntProvider.create(3, 7),
-            AbstractBlock.Settings.copy(Blocks.DEEPSLATE_EMERALD_ORE)
-    ));
+    public static final Block RUBY_ORE = registerBlock("ruby_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(3, 7),
+                    AbstractBlock.Settings.copy(Blocks.EMERALD_ORE)));
+    public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(3, 7),
+                    AbstractBlock.Settings.copy(Blocks.DEEPSLATE_EMERALD_ORE)));
 
 
     private static Block registerBlock(String name, Block block) {
@@ -41,22 +36,19 @@ public class ModBlocks {
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(BananaAdventureTime.MOD_ID, name), 
-            new BlockItem(block, new Item.Settings()));
+        Registry.register(Registries.ITEM, Identifier.of(BananaAdventureTime.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
 
     public static void registerModBlocks() {
         BananaAdventureTime.LOGGER.info("Registering Mod Blocks for " + BananaAdventureTime.MOD_ID);
 
-        //Add blocks here 2/2
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.addAfter(Blocks.EMERALD_BLOCK, RUBY_BLOCK);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.addAfter(Blocks.DEEPSLATE_EMERALD_ORE, RUBY_ORE);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.addAfter(ModBlocks.RUBY_ORE, DEEPSLATE_RUBY_ORE);
         });
     }

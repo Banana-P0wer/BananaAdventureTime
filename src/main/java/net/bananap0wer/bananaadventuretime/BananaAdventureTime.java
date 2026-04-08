@@ -3,8 +3,8 @@ package net.bananap0wer.bananaadventuretime;
 import net.bananap0wer.bananaadventuretime.block.ModBlocks;
 import net.bananap0wer.bananaadventuretime.item.ModItemGroups;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
-import net.bananap0wer.bananaadventuretime.loot.ModLootTableModifiers;
 import net.bananap0wer.bananaadventuretime.sound.ModSounds;
+import net.bananap0wer.bananaadventuretime.util.ModLootTableModifiers;
 import net.bananap0wer.bananaadventuretime.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -19,11 +19,12 @@ public class BananaAdventureTime implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 
-		ModSounds.registerSounds();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ModLootTableModifiers.registerLootTableModifiers();
 
+		ModSounds.registerSounds();
 		ModWorldGeneration.generateModWorldGen();
+
+		ModLootTableModifiers.modifyLootTables();
 	}
 }
