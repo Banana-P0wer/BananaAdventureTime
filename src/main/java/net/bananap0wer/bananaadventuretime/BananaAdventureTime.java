@@ -1,6 +1,7 @@
 package net.bananap0wer.bananaadventuretime;
 
 import net.bananap0wer.bananaadventuretime.block.ModBlocks;
+import net.bananap0wer.bananaadventuretime.command.ModCommands;
 import net.bananap0wer.bananaadventuretime.item.ModItemGroups;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
 import net.bananap0wer.bananaadventuretime.sound.ModSounds;
@@ -25,6 +26,7 @@ public class BananaAdventureTime implements ModInitializer {
 		ModSounds.registerSounds();
 		ModWorldGeneration.generateModWorldGen();
 
+		ModCommands.registerCommands();
 		ModLootTableModifiers.modifyLootTables();
 	}
 }
