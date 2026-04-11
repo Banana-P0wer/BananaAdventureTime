@@ -6,5 +6,18 @@
         "stream": true
       }
     ]
+  },
+  "marceline_axe_guitar_attack": {
+    "subtitle": "sounds.bananaadventuretime.marceline_axe_guitar_attack",
+    "sounds": [
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_1",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_2",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_3",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_4",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_5",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_6",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_7",
+      "bananaadventuretime:item/marceline_axe_guitar/guitar_attack_8"
+    ]
   }
 }

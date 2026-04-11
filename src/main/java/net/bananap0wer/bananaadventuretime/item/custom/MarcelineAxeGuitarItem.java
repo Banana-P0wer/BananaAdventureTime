@@ -2,6 +2,7 @@ package net.bananap0wer.bananaadventuretime.item.custom;
 
 import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
 import net.bananap0wer.bananaadventuretime.item.ModItems;
+import net.bananap0wer.bananaadventuretime.sound.ModSounds;
 import net.bananap0wer.bananaadventuretime.util.ItemEntityOwnerHelper;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.entity.EquipmentSlot;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
@@ -51,6 +53,7 @@ public class MarcelineAxeGuitarItem extends HoeItem {
             return TypedActionResult.pass(stack);
         }
 
+        playAttackSound(world, user);
         stack.damage(1, user, getEquipmentSlot(hand));
         user.getItemCooldownManager().set(this, SONG_COOLDOWN_TICKS);
 
@@ -102,6 +105,11 @@ public class MarcelineAxeGuitarItem extends HoeItem {
         }
 
         return hitAnyTarget;
+    }
+
+    private static void playAttackSound(World world, PlayerEntity user) {
+        world.playSound(null, user.getX(), user.getY(), user.getZ(),
+            ModSounds.MARCELINE_AXE_GUITAR_ATTACK, SoundCategory.PLAYERS, 1.0f, 1.0f);
     }
 
     private static boolean shouldDamageTarget(LivingEntity target, PlayerEntity user) {

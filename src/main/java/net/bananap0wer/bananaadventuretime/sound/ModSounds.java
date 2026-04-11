@@ -10,6 +10,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 public class ModSounds {
+    public static final SoundEvent MARCELINE_AXE_GUITAR_ATTACK = registerSoundEvent("marceline_axe_guitar_attack");
+
     public static final SoundEvent COME_ALONG_WITH_ME = registerSoundEvent("come_along_with_me");
     public static final RegistryKey<JukeboxSong> COME_ALONG_WITH_ME_KEY =
         RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(BananaAdventureTime.MOD_ID, "come_along_with_me"));
