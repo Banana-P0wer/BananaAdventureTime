@@ -1,0 +1,30 @@
+{
+  "parent": "bananaadventuretime:dimension/where_did_it_go",
+  "criteria": {
+    "obtained_fourth_dimension_sword": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Some weapons should not exist in three dimensions."
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:fourth_dimension_sword"
+    },
+    "title": {
+      "text": "Into the Fourth Dimension"
+    }
+  },
+  "requirements": [
+    [
+      "obtained_fourth_dimension_sword"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

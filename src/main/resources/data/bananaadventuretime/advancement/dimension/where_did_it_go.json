@@ -1,0 +1,28 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "threw_scarlet_into_void": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "text": "Some things do not fall forever."
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:scarlet"
+    },
+    "title": {
+      "text": "Where Did It Go?"
+    }
+  },
+  "requirements": [
+    [
+      "threw_scarlet_into_void"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
