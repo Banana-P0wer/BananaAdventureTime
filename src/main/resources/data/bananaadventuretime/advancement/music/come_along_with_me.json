@@ -25,7 +25,7 @@
   },
   "display": {
     "description": {
-      "text": "Play a song for the end of an adventure."
+      "translate": "advancements.bananaadventuretime.music.come_along_with_me.description"
     },
     "frame": "goal",
     "icon": {
@@ -33,7 +33,7 @@
       "id": "bananaadventuretime:come_along_with_me"
     },
     "title": {
-      "text": "Come Along With Me"
+      "translate": "advancements.bananaadventuretime.music.come_along_with_me.title"
     }
   },
   "requirements": [

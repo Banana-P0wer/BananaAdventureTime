@@ -7,7 +7,7 @@
   },
   "display": {
     "description": {
-      "text": "Some weapons should not exist in three dimensions."
+      "translate": "advancements.bananaadventuretime.dimension.into_the_fourth_dimension.description"
     },
     "frame": "challenge",
     "icon": {
@@ -15,7 +15,7 @@
       "id": "bananaadventuretime:fourth_dimension_sword"
     },
     "title": {
-      "text": "Into the Fourth Dimension"
+      "translate": "advancements.bananaadventuretime.dimension.into_the_fourth_dimension.title"
     }
   },
   "requirements": [

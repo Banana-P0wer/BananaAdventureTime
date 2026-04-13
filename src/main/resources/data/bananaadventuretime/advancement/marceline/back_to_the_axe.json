@@ -7,7 +7,7 @@
   },
   "display": {
     "description": {
-      "text": "The music burned away. The axe stayed."
+      "translate": "advancements.bananaadventuretime.marceline.back_to_the_axe.description"
     },
     "frame": "challenge",
     "icon": {
@@ -15,7 +15,7 @@
       "id": "bananaadventuretime:marceline_axe"
     },
     "title": {
-      "text": "Back to the Axe"
+      "translate": "advancements.bananaadventuretime.marceline.back_to_the_axe.title"
     }
   },
   "requirements": [

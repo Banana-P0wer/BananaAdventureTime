@@ -7,7 +7,7 @@
   },
   "display": {
     "description": {
-      "text": "Some things do not fall forever."
+      "translate": "advancements.bananaadventuretime.dimension.where_did_it_go.description"
     },
     "frame": "task",
     "hidden": true,
@@ -16,7 +16,7 @@
       "id": "bananaadventuretime:scarlet"
     },
     "title": {
-      "text": "Where Did It Go?"
+      "translate": "advancements.bananaadventuretime.dimension.where_did_it_go.title"
     }
   },
   "requirements": [

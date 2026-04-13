@@ -14,7 +14,7 @@
   },
   "display": {
     "description": {
-      "text": "Sharp enough for trees. Loud enough for everything else."
+      "translate": "advancements.bananaadventuretime.marceline.axe_bass.description"
     },
     "frame": "goal",
     "icon": {
@@ -22,7 +22,7 @@
       "id": "bananaadventuretime:marceline_axe"
     },
     "title": {
-      "text": "Axe Bass"
+      "translate": "advancements.bananaadventuretime.marceline.axe_bass.title"
     }
   },
   "requirements": [

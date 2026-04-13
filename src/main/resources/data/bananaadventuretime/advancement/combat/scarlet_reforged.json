@@ -10,7 +10,7 @@
   },
   "display": {
     "description": {
-      "text": "Old steel, new edge."
+      "translate": "advancements.bananaadventuretime.combat.scarlet_reforged.description"
     },
     "frame": "goal",
     "icon": {
@@ -18,7 +18,7 @@
       "id": "bananaadventuretime:scarlet"
     },
     "title": {
-      "text": "Scarlet Reforged"
+      "translate": "advancements.bananaadventuretime.combat.scarlet_reforged.title"
     }
   },
   "requirements": [

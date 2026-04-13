@@ -27,7 +27,7 @@
   },
   "display": {
     "description": {
-      "text": "It was worth it. Probably."
+      "translate": "advancements.bananaadventuretime.combat.one_good_hit.description"
     },
     "frame": "challenge",
     "icon": {
@@ -35,7 +35,7 @@
       "id": "bananaadventuretime:grape_sword"
     },
     "title": {
-      "text": "One Good Hit"
+      "translate": "advancements.bananaadventuretime.combat.one_good_hit.title"
     }
   },
   "requirements": [

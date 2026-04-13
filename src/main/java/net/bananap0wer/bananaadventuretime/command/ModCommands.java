@@ -69,10 +69,10 @@ public class ModCommands {
                         .then(literal("break")
                                 .then(literal("demon_blood_sword")
                                         .executes(context -> executeWeaponBreak(context.getSource(),
-                                                ModItems.DEMON_BLOOD_SWORD, "Demon Blood Sword")))
+                                                ModItems.DEMON_BLOOD_SWORD)))
                                 .then(literal("grape_sword")
                                         .executes(context -> executeWeaponBreak(context.getSource(),
-                                                ModItems.GRAPE_SWORD, "Grape Sword")))))
+                                                ModItems.GRAPE_SWORD)))))
                 .then(literal("food")
                         .then(literal("juice")
                                 .executes(context -> executeFoodJuice(context.getSource())))
@@ -81,10 +81,10 @@ public class ModCommands {
     }
 
     private static int executeHelp(ServerCommandSource source) {
-        source.sendFeedback(() -> Text.literal("Available: /atdebug loot igloo|snowy_house"), false);
-        source.sendFeedback(() -> Text.literal("Available: /atdebug ore info|place|scan <radius>"), false);
-        source.sendFeedback(() -> Text.literal("Available: /atdebug weapon break demon_blood_sword|grape_sword"), false);
-        source.sendFeedback(() -> Text.literal("Available: /atdebug food juice|hunger"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.help.loot"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.help.ore"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.help.weapon"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.help.food"), false);
         return 1;
     }
 
@@ -95,13 +95,13 @@ public class ModCommands {
         HitResult hitResult = player.raycast(TARGET_RANGE, 0.0f, false);
 
         if (!(hitResult instanceof BlockHitResult blockHitResult) || hitResult.getType() != HitResult.Type.BLOCK) {
-            source.sendError(Text.literal("Look at a lootable container first."));
+            source.sendError(Text.translatable("command.bananaadventuretime.atdebug.loot.no_container"));
             return 0;
         }
 
         BlockPos pos = blockHitResult.getBlockPos();
         if (!(world.getBlockEntity(pos) instanceof LootableInventory lootableInventory)) {
-            source.sendError(Text.literal("Target block is not a lootable container: " + formatPos(pos)));
+            source.sendError(Text.translatable("command.bananaadventuretime.atdebug.loot.not_lootable", formatPos(pos)));
             return 0;
         }
 
@@ -111,7 +111,8 @@ public class ModCommands {
         lootableInventory.generateLoot(player);
         lootableInventory.markDirty();
 
-        source.sendFeedback(() -> Text.literal("Generated " + lootName + " loot at " + formatPos(pos)), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.loot.generated",
+                Text.translatable(getLootNameKey(lootName)), formatPos(pos)), false);
         return 1;
     }
 
@@ -122,11 +123,12 @@ public class ModCommands {
         RegistryEntry<Biome> biome = world.getBiome(pos);
         String biomeId = biome.getKey().map(key -> key.getValue().toString()).orElse("[unregistered]");
 
-        source.sendFeedback(() -> Text.literal("Biome: " + biomeId), false);
-        source.sendFeedback(() -> Text.literal("Mountain biome: " + biome.isIn(BiomeTags.IS_MOUNTAIN)), false);
-        source.sendFeedback(() -> Text.literal("Ruby ore placed feature: bananaadventuretime:ruby_ore_placed"), false);
-        source.sendFeedback(() -> Text.literal("Placement: count=100, height=trapezoid -16..480, biome=#minecraft:is_mountain"), false);
-        source.sendFeedback(() -> Text.literal("Vein: size=3, targets=stone/deepslate ore replaceables"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.biome", biomeId), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.mountain_biome",
+                formatBoolean(biome.isIn(BiomeTags.IS_MOUNTAIN))), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.placed_feature"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.placement"), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.vein"), false);
         return 1;
     }
 
@@ -137,7 +139,8 @@ public class ModCommands {
         Optional<BlockPos> origin = findNearestOreReplaceable(world, targetPos);
 
         if (origin.isEmpty()) {
-            source.sendError(Text.literal("No stone/deepslate ore replaceable block near " + formatPos(targetPos)));
+            source.sendError(Text.translatable("command.bananaadventuretime.atdebug.ore.no_replaceable",
+                    formatPos(targetPos)));
             return 0;
         }
 
@@ -145,18 +148,20 @@ public class ModCommands {
                 .get(RegistryKeys.CONFIGURED_FEATURE)
                 .getEntry(ModConfiguredFeatures.RUBY_ORE_KEY);
         if (feature.isEmpty()) {
-            source.sendError(Text.literal("Ruby ore configured feature is not registered."));
+            source.sendError(Text.translatable("command.bananaadventuretime.atdebug.ore.not_registered"));
             return 0;
         }
 
         boolean generated = feature.get().value().generate(world, world.getChunkManager().getChunkGenerator(),
                 world.getRandom(), origin.get());
         if (!generated) {
-            source.sendError(Text.literal("Ruby ore feature did not generate at " + formatPos(origin.get())));
+            source.sendError(Text.translatable("command.bananaadventuretime.atdebug.ore.not_generated",
+                    formatPos(origin.get())));
             return 0;
         }
 
-        source.sendFeedback(() -> Text.literal("Generated ruby ore feature near " + formatPos(origin.get())), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.generated",
+                formatPos(origin.get())), false);
         return 1;
     }
 
@@ -185,28 +190,33 @@ public class ModCommands {
         int total = rubyOreCount + deepslateRubyOreCount;
         int finalRubyOreCount = rubyOreCount;
         int finalDeepslateRubyOreCount = deepslateRubyOreCount;
-        source.sendFeedback(() -> Text.literal("Ruby ore scan radius " + radius + ": ruby=" + finalRubyOreCount
-                + ", deepslate=" + finalDeepslateRubyOreCount + ", total=" + total), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.ore.scan", radius,
+                finalRubyOreCount, finalDeepslateRubyOreCount, total), false);
         return Math.max(total, 1);
     }
 
-    private static int executeWeaponBreak(ServerCommandSource source, Item item, String itemName) throws CommandSyntaxException {
+    private static int executeWeaponBreak(ServerCommandSource source, Item item) throws CommandSyntaxException {
         ServerPlayerEntity player = source.getPlayerOrThrow();
         ItemStack stack = new ItemStack(item);
+        Text itemName = stack.getName();
         if (stack.isDamageable()) {
             stack.setDamage(Math.max(0, stack.getMaxDamage() - 1));
         }
 
         equipMainHand(player, stack);
-        source.sendFeedback(() -> Text.literal("Equipped almost-broken " + itemName + " in main hand."), false);
-        source.sendFeedback(() -> Text.literal("Use survival/adventure mode when testing break replacement."), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.weapon.equipped",
+                itemName), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.weapon.test_mode"), false);
         return 1;
     }
 
     private static int executeFoodJuice(ServerCommandSource source) throws CommandSyntaxException {
         ServerPlayerEntity player = source.getPlayerOrThrow();
+        Text juiceName = new ItemStack(ModItems.SWEET_BERRIES_JUICE).getName();
+
         giveOrDrop(player, new ItemStack(ModItems.SWEET_BERRIES_JUICE, JUICE_COUNT));
-        source.sendFeedback(() -> Text.literal("Gave " + JUICE_COUNT + " Sweet Berries Juice."), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.food.gave_item",
+                JUICE_COUNT, juiceName), false);
         return 1;
     }
 
@@ -216,7 +226,8 @@ public class ModCommands {
         hungerManager.setFoodLevel(DEBUG_HUNGER_LEVEL);
         hungerManager.setSaturationLevel(0.0f);
         hungerManager.setExhaustion(0.0f);
-        source.sendFeedback(() -> Text.literal("Set hunger to " + DEBUG_HUNGER_LEVEL + "/20 and saturation to 0."), false);
+        source.sendFeedback(() -> Text.translatable("command.bananaadventuretime.atdebug.food.hunger",
+                DEBUG_HUNGER_LEVEL), false);
         return 1;
     }
 
@@ -262,5 +273,14 @@ public class ModCommands {
 
     private static String formatPos(BlockPos pos) {
         return pos.getX() + " " + pos.getY() + " " + pos.getZ();
+    }
+
+    private static String getLootNameKey(String lootName) {
+        return "command.bananaadventuretime.atdebug.loot.type." + lootName;
+    }
+
+    private static Text formatBoolean(boolean value) {
+        return Text.translatable(value ? "command.bananaadventuretime.boolean.true"
+                : "command.bananaadventuretime.boolean.false");
     }
 }

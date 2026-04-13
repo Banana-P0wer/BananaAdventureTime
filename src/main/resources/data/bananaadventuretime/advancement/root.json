@@ -14,7 +14,7 @@
   "display": {
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "text": "The adventure begins."
+      "translate": "advancements.bananaadventuretime.root.description"
     },
     "frame": "task",
     "icon": {
@@ -22,7 +22,7 @@
       "id": "bananaadventuretime:ruby"
     },
     "title": {
-      "text": "Mathematical!"
+      "translate": "advancements.bananaadventuretime.root.title"
     }
   },
   "requirements": [

@@ -28,7 +28,7 @@
   },
   "display": {
     "description": {
-      "text": "Taste every strange snack this world has to offer."
+      "translate": "advancements.bananaadventuretime.food.snack_time.description"
     },
     "frame": "challenge",
     "icon": {
@@ -36,7 +36,7 @@
       "id": "bananaadventuretime:time_sandwich"
     },
     "title": {
-      "text": "Snack Time"
+      "translate": "advancements.bananaadventuretime.food.snack_time.title"
     }
   },
   "requirements": [

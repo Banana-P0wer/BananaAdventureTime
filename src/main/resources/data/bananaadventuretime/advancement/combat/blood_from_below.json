@@ -14,7 +14,7 @@
   },
   "display": {
     "description": {
-      "text": "Some blades remember where they came from."
+      "translate": "advancements.bananaadventuretime.combat.blood_from_below.description"
     },
     "frame": "goal",
     "icon": {
@@ -22,7 +22,7 @@
       "id": "bananaadventuretime:demon_blood_sword"
     },
     "title": {
-      "text": "Blood From Below"
+      "translate": "advancements.bananaadventuretime.combat.blood_from_below.title"
     }
   },
   "requirements": [

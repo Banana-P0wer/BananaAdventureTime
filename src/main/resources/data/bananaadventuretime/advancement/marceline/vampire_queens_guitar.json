@@ -10,7 +10,7 @@
   },
   "display": {
     "description": {
-      "text": "Some weapons are better with strings."
+      "translate": "advancements.bananaadventuretime.marceline.vampire_queens_guitar.description"
     },
     "frame": "goal",
     "icon": {
@@ -18,7 +18,7 @@
       "id": "bananaadventuretime:marceline_axe_guitar"
     },
     "title": {
-      "text": "Vampire Queen's Guitar"
+      "translate": "advancements.bananaadventuretime.marceline.vampire_queens_guitar.title"
     }
   },
   "requirements": [

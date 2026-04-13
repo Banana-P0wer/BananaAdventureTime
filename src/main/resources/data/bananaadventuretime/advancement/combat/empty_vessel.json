@@ -14,7 +14,7 @@
   },
   "display": {
     "description": {
-      "text": "The power is gone, but the shape remains."
+      "translate": "advancements.bananaadventuretime.combat.empty_vessel.description"
     },
     "frame": "goal",
     "icon": {
@@ -22,7 +22,7 @@
       "id": "bananaadventuretime:empty_demon_blood_sword"
     },
     "title": {
-      "text": "Empty Vessel"
+      "translate": "advancements.bananaadventuretime.combat.empty_vessel.title"
     }
   },
   "requirements": [
