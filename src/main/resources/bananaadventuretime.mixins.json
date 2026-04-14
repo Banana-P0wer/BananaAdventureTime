@@ -4,9 +4,9 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"AnvilScreenHandlerAccessor",
+		"AnvilScreenHandlerMixin",
 		"ExampleMixin",
 		"ForgingScreenHandlerAccessor",
-		"ForgingScreenHandlerMixin",
 		"ItemEntityAccessor",
 		"ItemEntityMixin"
 	],
