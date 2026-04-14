@@ -11,8 +11,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.Monster;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -22,7 +22,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class MarcelineAxeGuitarItem extends HoeItem {
+public class MarcelineAxeGuitarItem extends ToolItem {
     private static final double SONG_RADIUS = 10.0;
     private static final float SONG_DAMAGE = 5.0f;
     private static final int SONG_COOLDOWN_TICKS = 20;
@@ -48,12 +48,13 @@ public class MarcelineAxeGuitarItem extends HoeItem {
             return TypedActionResult.success(stack, true);
         }
 
+        playAttackSound(world, user);
         boolean hitAnyTarget = damageNearbyHostileTargets(world, user);
         if (!hitAnyTarget) {
-            return TypedActionResult.pass(stack);
+            user.getItemCooldownManager().set(this, SONG_COOLDOWN_TICKS);
+            return TypedActionResult.success(stack, false);
         }
 
-        playAttackSound(world, user);
         stack.damage(1, user, getEquipmentSlot(hand));
         user.getItemCooldownManager().set(this, SONG_COOLDOWN_TICKS);
 

@@ -9,10 +9,10 @@ import net.bananap0wer.bananaadventuretime.item.custom.SweetBerriesJuiceItem;
 import net.bananap0wer.bananaadventuretime.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registry;
@@ -91,7 +91,7 @@ public class ModItems {
     private static Item registerMarcelineAxeGuitar(String name) {
         Item.Settings settings = new Item.Settings()
             .maxDamage(ToolMaterials.NETHERITE.getDurability())
-            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,
+            .attributeModifiers(MiningToolItem.createAttributeModifiers(ToolMaterials.NETHERITE,
                 getNetheriteWeaponAttackDamage(1), getWeaponAttackSpeed(4.0f)));
 
         return registerItem(name, new MarcelineAxeGuitarItem(ToolMaterials.NETHERITE, settings));
