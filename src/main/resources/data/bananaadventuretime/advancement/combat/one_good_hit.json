@@ -1,28 +1,8 @@
 {
   "parent": "bananaadventuretime:combat/berry_bad_idea",
   "criteria": {
-    "hit_with_grape_sword": {
-      "conditions": {
-        "damage": {
-          "type": {
-            "direct_entity": {
-              "equipment": {
-                "mainhand": {
-                  "items": "bananaadventuretime:grape_sword"
-                }
-              },
-              "type": "minecraft:player"
-            },
-            "tags": [
-              {
-                "expected": true,
-                "id": "minecraft:is_player_attack"
-              }
-            ]
-          }
-        }
-      },
-      "trigger": "minecraft:player_hurt_entity"
+    "hit_and_broke_grape_sword": {
+      "trigger": "minecraft:impossible"
     }
   },
   "display": {
@@ -40,7 +20,7 @@
   },
   "requirements": [
     [
-      "hit_with_grape_sword"
+      "hit_and_broke_grape_sword"
     ]
   ],
   "rewards": {
