@@ -66,6 +66,8 @@
   "advancements.bananaadventuretime.marceline.back_to_the_axe.description": "La musique a brûlé. La hache est restée.",
   "advancements.bananaadventuretime.music.come_along_with_me.title": "Come Along With Me",
   "advancements.bananaadventuretime.music.come_along_with_me.description": "Jouez une chanson pour la fin d'une aventure.",
+  "advancements.bananaadventuretime.ice_king.the_crown_is_yours.title": "La couronne est à vous",
+  "advancements.bananaadventuretime.ice_king.the_crown_is_yours.description": "Fabriquez la Couronne du Roi des Glaces.",
 
   "command.bananaadventuretime.boolean.true": "oui",
   "command.bananaadventuretime.boolean.false": "non",

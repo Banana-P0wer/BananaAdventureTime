@@ -1,0 +1,30 @@
+{
+  "parent": "bananaadventuretime:root",
+  "criteria": {
+    "crafted_ice_king_crown": {
+      "conditions": {
+        "recipe_id": "bananaadventuretime:ice_king_crown"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.bananaadventuretime.ice_king.the_crown_is_yours.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:ice_king_crown"
+    },
+    "title": {
+      "translate": "advancements.bananaadventuretime.ice_king.the_crown_is_yours.title"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_ice_king_crown"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
