@@ -1,0 +1,31 @@
+{
+  "parent": "bananaadventuretime:combat/one_good_hit",
+  "criteria": {
+    "killed_wither_with_grape_sword": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.bananaadventuretime.combat.berry_the_wither.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "bananaadventuretime:grape_sword"
+    },
+    "title": {
+      "translate": "advancements.bananaadventuretime.combat.berry_the_wither.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_wither_with_grape_sword"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
