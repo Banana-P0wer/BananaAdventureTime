@@ -22,6 +22,10 @@ public class ModLootTableModifiers {
             if (LootTables.VILLAGE_SNOWY_HOUSE_CHEST.equals(key)) {
                 addEmptyIceKingCrownPool(tableBuilder);
             }
+
+            if (LootTables.NETHER_BRIDGE_CHEST.equals(key)) {
+                addDemonBloodSwordPool(tableBuilder);
+            }
         });
     }
 
@@ -29,6 +33,14 @@ public class ModLootTableModifiers {
         LootPool.Builder poolBuilder = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1))
                 .with(ItemEntry.builder(ModItems.EMPTY_ICE_KING_CROWN));
+
+        tableBuilder.pool(poolBuilder.build());
+    }
+
+    private static void addDemonBloodSwordPool(LootTable.Builder tableBuilder) {
+        LootPool.Builder poolBuilder = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1))
+                .with(ItemEntry.builder(ModItems.DEMON_BLOOD_SWORD));
 
         tableBuilder.pool(poolBuilder.build());
     }

@@ -55,7 +55,10 @@ public class ModCommands {
                         .then(literal("igloo")
                                 .executes(context -> executeLoot(context.getSource(), LootTables.IGLOO_CHEST_CHEST, "igloo")))
                         .then(literal("snowy_house")
-                                .executes(context -> executeLoot(context.getSource(), LootTables.VILLAGE_SNOWY_HOUSE_CHEST, "snowy_house"))))
+                                .executes(context -> executeLoot(context.getSource(), LootTables.VILLAGE_SNOWY_HOUSE_CHEST, "snowy_house")))
+                        .then(literal("nether_fortress")
+                                .executes(context -> executeLoot(context.getSource(), LootTables.NETHER_BRIDGE_CHEST,
+                                        "nether_fortress"))))
                 .then(literal("ore")
                         .then(literal("info")
                                 .executes(context -> executeOreInfo(context.getSource())))
