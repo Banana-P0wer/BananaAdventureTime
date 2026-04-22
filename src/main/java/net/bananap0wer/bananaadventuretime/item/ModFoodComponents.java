@@ -10,6 +10,21 @@ public class ModFoodComponents {
         .usingConvertsTo(Items.GLASS_BOTTLE)
         .build();
 
+    public static final FoodComponent BUTTER = new FoodComponent.Builder()
+        .nutrition(1)
+        .saturationModifier(0.1f)
+        .build();
+
+    public static final FoodComponent PANCAKES = new FoodComponent.Builder()
+        .nutrition(2)
+        .saturationModifier(0.3f)
+        .build();
+
+    public static final FoodComponent PANCAKES_WITH_BACON = new FoodComponent.Builder()
+        .nutrition(12)
+        .saturationModifier(0.6f)
+        .build();
+
     public static final FoodComponent APPLE_PIE = new FoodComponent.Builder()
         .nutrition(8)
         .saturationModifier(0.3f)

@@ -47,6 +47,12 @@ public class ModItems {
 
     public static final Item SWEET_BERRIES_JUICE = registerItem("sweet_berries_juice",
         new SweetBerriesJuiceItem(new Item.Settings().food(ModFoodComponents.SWEET_BERRIES_JUICE).maxCount(16)));
+    public static final Item BUTTER = registerItem("butter",
+        new Item(new Item.Settings().food(ModFoodComponents.BUTTER)));
+    public static final Item PANCAKES = registerItem("pancakes",
+        new Item(new Item.Settings().food(ModFoodComponents.PANCAKES)));
+    public static final Item PANCAKES_WITH_BACON = registerItem("pancakes_with_bacon",
+        new Item(new Item.Settings().food(ModFoodComponents.PANCAKES_WITH_BACON)));
     public static final Item APPLE_PIE = registerItem("apple_pie",
         new Item(new Item.Settings().food(ModFoodComponents.APPLE_PIE)));
     public static final Item TIME_SANDWICH = registerItem("time_sandwich",
@@ -137,6 +143,9 @@ public class ModItems {
             entries.addAfter(Items.HONEY_BOTTLE, SWEET_BERRIES_JUICE);
             entries.addAfter(Items.PUMPKIN_PIE, APPLE_PIE);
             entries.addAfter(APPLE_PIE, TIME_SANDWICH);
+            entries.addAfter(TIME_SANDWICH, BUTTER);
+            entries.addAfter(BUTTER, PANCAKES);
+            entries.addAfter(PANCAKES, PANCAKES_WITH_BACON);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_porkchop"
+    },
+    {
+      "item": "bananaadventuretime:butter"
+    },
+    {
+      "item": "bananaadventuretime:pancakes"
+    }
+  ],
+  "result": {
+    "id": "bananaadventuretime:pancakes_with_bacon"
+  },
+  "show_notification": true
+}

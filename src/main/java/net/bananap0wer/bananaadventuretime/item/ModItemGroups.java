@@ -29,6 +29,9 @@ public class ModItemGroups {
                         entries.add(ModItems.SWEET_BERRIES_JUICE);
                         entries.add(ModItems.APPLE_PIE);
                         entries.add(ModItems.TIME_SANDWICH);
+                        entries.add(ModItems.BUTTER);
+                        entries.add(ModItems.PANCAKES);
+                        entries.add(ModItems.PANCAKES_WITH_BACON);
 
                         entries.add(ModItems.SCARLET);
                         entries.add(ModItems.FOURTH_DIMENSION_SWORD);
