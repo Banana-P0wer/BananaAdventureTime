@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/handheld",
   "textures": {
     "layer0": "bananaadventuretime:item/fourth_dimension_sword"
   }

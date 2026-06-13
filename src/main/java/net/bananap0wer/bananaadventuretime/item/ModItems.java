@@ -5,6 +5,8 @@ import net.bananap0wer.bananaadventuretime.BananaAdventureTime;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
@@ -20,13 +22,13 @@ public class ModItems {
     public static final Item ICE_KING_CROWN = refisterItem("ice_king_crown", new Item(new Item.Settings().fireproof()));
     public static final Item EMPTY_ICE_KING_CROWN = refisterItem("empty_ice_king_crown", new Item(new Item.Settings().fireproof()));
     
-    public static final Item SCARLET = refisterItem("scarlet", new Item(new Item.Settings().fireproof()));
-    public static final Item FOURTH_DIMENSION_SWORD = refisterItem("fourth_dimension_sword", new Item(new Item.Settings().fireproof()));
-    public static final Item ROOT_SWORD = refisterItem("root_sword", new Item(new Item.Settings()));
-    public static final Item DEMON_BLOOD_SWORD = refisterItem("demon_blood_sword", new Item(new Item.Settings().fireproof()));
-    public static final Item GRAPE_SWORD = refisterItem("grape_sword", new Item(new Item.Settings().fireproof()));
-    public static final Item GRASS_SWORD = refisterItem("grass_sword", new Item(new Item.Settings()));
-    public static final Item FINN_SWORD = refisterItem("finn_sword", new Item(new Item.Settings()));
+    public static final Item SCARLET = registerNetheriteSword("scarlet", true);
+    public static final Item FOURTH_DIMENSION_SWORD = registerNetheriteSword("fourth_dimension_sword", true);
+    public static final Item ROOT_SWORD = registerNetheriteSword("root_sword", false);
+    public static final Item DEMON_BLOOD_SWORD = registerNetheriteSword("demon_blood_sword", true);
+    public static final Item GRAPE_SWORD = registerNetheriteSword("grape_sword", true);
+    public static final Item GRASS_SWORD = registerNetheriteSword("grass_sword", false);
+    public static final Item FINN_SWORD = registerNetheriteSword("finn_sword", false);
 
     public static final Item SCARLET_BLADE = refisterItem("scarlet_blade", new Item(new Item.Settings().fireproof()));
     public static final Item SCARLET_HANDLE = refisterItem("scarlet_handle", new Item(new Item.Settings().fireproof()));
@@ -37,6 +39,17 @@ public class ModItems {
     public static final Item SWEET_BERRIES_JUICE = refisterItem("sweet_berries_juice", new Item(new Item.Settings()));
 
     public static final Item COME_ALONG_WITH_ME = refisterItem("come_along_with_me", new Item(new Item.Settings()));
+
+    private static Item registerNetheriteSword(String name, boolean fireproof) {
+        Item.Settings settings = new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4f));
+
+        if (fireproof) {
+            settings.fireproof();
+        }
+
+        return refisterItem(name, new SwordItem(ToolMaterials.NETHERITE, settings));
+    }
 
     private static Item refisterItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(BananaAdventureTime.MOD_ID, name), item);
